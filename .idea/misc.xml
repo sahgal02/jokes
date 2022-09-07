@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/jatin/AndroidStudioProjects/Story/app/src/main/res/drawable/background_slice.xml" value="0.172" />
+        <entry key="..\:/Users/jatin/AndroidStudioProjects/Story/app/src/main/res/drawable/circular_progress_green.xml" value="0.192" />
+        <entry key="..\:/Users/jatin/AndroidStudioProjects/Story/app/src/main/res/drawable/circular_shade_light.xml" value="0.192" />
+        <entry key="..\:/Users/jatin/AndroidStudioProjects/Story/app/src/main/res/drawable/circular_shade_trans.xml" value="0.192" />
+        <entry key="..\:/Users/jatin/AndroidStudioProjects/Story/app/src/main/res/drawable/icon_vd_arrow_backward.xml" value="0.192" />
+        <entry key="..\:/Users/jatin/AndroidStudioProjects/Story/app/src/main/res/drawable/icon_vd_explore.xml" value="0.192" />
+        <entry key="..\:/Users/jatin/AndroidStudioProjects/Story/app/src/main/res/drawable/icon_vd_forward_time.xml" value="0.192" />
+        <entry key="..\:/Users/jatin/AndroidStudioProjects/Story/app/src/main/res/drawable/icon_vd_landscape.xml" value="0.192" />
+        <entry key="..\:/Users/jatin/AndroidStudioProjects/Story/app/src/main/res/drawable/icon_vd_mute.xml" value="0.192" />
+        <entry key="..\:/Users/jatin/AndroidStudioProjects/Story/app/src/main/res/drawable/style_shadow_up.xml" value="0.192" />
+        <entry key="..\:/Users/jatin/AndroidStudioProjects/Story/app/src/main/res/layout-land/activity_video_explore.xml" value="0.3265625" />
+        <entry key="..\:/Users/jatin/AndroidStudioProjects/Story/app/src/main/res/layout/activity_main.xml" value="0.20427350427350427" />
+        <entry key="..\:/Users/jatin/AndroidStudioProjects/Story/app/src/main/res/layout/activity_video_explore.xml" value="0.25" />
+        <entry key="..\:/Users/jatin/AndroidStudioProjects/Story/app/src/main/res/layout/adapter_item.xml" value="0.264" />
+        <entry key="..\:/Users/jatin/AndroidStudioProjects/Story/app/src/main/res/layout/adapter_item_shimmer.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/jatin/AndroidStudioProjects/Story/app/src/main/res/layout/frag_jokes.xml" value="0.264" />
+        <entry key="..\:/Users/jatin/AndroidStudioProjects/Story/app/src/main/res/layout/frag_player.xml" value="0.25" />
+        <entry key="..\:/Users/jatin/AndroidStudioProjects/Story/app/src/main/res/layout/include_app_bar_shadow.xml" value="0.25" />
+        <entry key="..\:/Users/jatin/AndroidStudioProjects/Story/app/src/main/res/layout/include_connection_layout.xml" value="0.25" />
+        <entry key="..\:/Users/jatin/AndroidStudioProjects/Story/app/src/main/res/layout/include_player.xml" value="0.3132530120481928" />
+        <entry key="..\:/Users/jatin/AndroidStudioProjects/Story/app/src/main/res/layout/include_player_horizontal.xml" value="0.264" />
+        <entry key="..\:/Users/jatin/AndroidStudioProjects/Story/app/src/main/res/layout/include_progress_bar.xml" value="0.25" />
+        <entry key="..\:/Users/jatin/AndroidStudioProjects/Story/app/src/main/res/layout/include_vertical_divider.xml" value="0.2359375" />
+        <entry key="..\:/Users/jatin/AndroidStudioProjects/Story/app/src/main/res/menu/menu.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

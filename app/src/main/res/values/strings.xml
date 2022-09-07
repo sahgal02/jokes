@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Story</string>
+    <string name="string_message_check_connection">Check connection and try again.</string>
+    <string name="string_message_no_internet">No internet</string>
+    <string name="string_icon_desc_back">icon</string>
+    <string name="menu_mostly_viewed">Mostly Viewed</string>
+    <string name="menu_recently_viewed">Recent first</string>
+    <string name="menu_refresh">Refresh</string>
+</resources>

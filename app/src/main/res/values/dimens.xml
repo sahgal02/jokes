@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimen_12sp">12sp</dimen>
+    <dimen name="dimen_12dp">12dp</dimen>
+    <dimen name="dimen_4dp">4dp</dimen>
+    <dimen name="dimen_app_bar_elevation_zero">0dp</dimen>
+    <dimen name="dimen_10dp">10dp</dimen>
+    <dimen name="dimen_48dp">48dp</dimen>
+    <dimen name="dimen_04dp">4dp</dimen>
+    <dimen name="dimen_17sp">17sp</dimen>
+    <dimen name="dimen_8dp">8dp</dimen>
+    <dimen name="dimen_4sp">4sp</dimen>
+    <dimen name="dimen_6dp">6dp</dimen>
+    <dimen name="dimen_item_image">46dp</dimen>
+    <dimen name="dimen_shadow_height">5dp</dimen>
+    <dimen name="dimen_16dp">16dp</dimen>
+    <dimen name="dimen_36dp">36dp</dimen>
+    <dimen name="dimen_20dp">20dp</dimen>
+    <dimen name="dimen_56dp">56dp</dimen>
+    <dimen name="dimen_slice_radius_large">12dp</dimen>
+</resources>
