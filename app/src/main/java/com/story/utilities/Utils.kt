@@ -11,6 +11,7 @@ import android.util.Log
 import android.view.View
 import android.view.Window
 import android.view.inputmethod.InputMethodManager
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
@@ -94,85 +95,12 @@ object Utils {
             window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
             window.statusBarColor = ContextCompat.getColor(
                 MyApplication.instance.applicationContext,
-                R.color.colorPrimary
+                R.color.colorBlack
             )
         }
     }
 
 
-    /**
-     * Method used to create [Snackbar] of your activity
-     *
-     * @param activity Activity Context make sure you set your LayoutId
-     * @param message  SnackBarMessage
-     */
-    fun snackbar(activity: Activity, message: String?) {
-//        message?.let {
-//            try {
-//                val snackbar = Snackbar.make(
-//                    activity.findViewById(R.id.coordinator),
-//                    message, Snackbar.LENGTH_LONG
-//                )
-//                val sbView = snackbar.view
-//                sbView.setBackgroundColor(ContextCompat.getColor(activity, R.color.colorBlack))
-//                val textView = sbView.findViewById<TextView>(R.id.snackbar_text)
-//                textView.setTextColor(ContextCompat.getColor(activity, R.color.colorWhite))
-//                snackbar.show()
-//            } catch (e: Exception) {
-//                toast(activity, message)
-//            }
-//        }
-    }
-
-    /**
-     * Call to Hide Keyboard
-     */
-    fun hideSoftKeyboard(activity: Activity) {
-        try {
-            val inputMethodManager = activity.getSystemService(
-                Activity.INPUT_METHOD_SERVICE
-            ) as InputMethodManager
-            inputMethodManager.hideSoftInputFromWindow(
-                activity.currentFocus!!.windowToken, 0
-            )
-        } catch (ignored: Exception) {
-        }
-
-    }
-
-    /**
-     * Compare the size of two floating point numbers
-     *
-     * @param a
-     * @param b
-     * @return 1 is a > b
-     * -1 is a < b
-     * 0 is a == b
-     */
-    private fun compareFloat(a: Float, b: Float): Int {
-        val ta = (a * 100000).roundToInt();
-        val tb = (b * 100000).roundToInt();
-        return if (ta > tb) {
-            1
-        } else if (ta < tb) {
-            -1
-        } else {
-            0
-        }
-    }
-
-    /**
-     * Converting DP to pixel
-     */
-    fun dp2px(context: Context?, dpValue: Float): Int {
-        if (context == null || compareFloat(
-                0f,
-                dpValue
-            ) == 0
-        ) return 0
-        val scale = context.resources.displayMetrics.density
-        return (dpValue * scale + 0.5f).toInt()
-    }
 
     /**
      * Function used for Status bar color white

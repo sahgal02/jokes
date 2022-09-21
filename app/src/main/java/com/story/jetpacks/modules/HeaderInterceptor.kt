@@ -15,7 +15,7 @@ class HeaderInterceptor constructor(
                     originalRequest.newBuilder()
                 } else {
                     originalRequest.newBuilder().apply {
-                        header("Content-Type", "application/json")
+                        header("Accept", "application/json")
                     }
                 }
             chain.proceed(requestBuilder.build())

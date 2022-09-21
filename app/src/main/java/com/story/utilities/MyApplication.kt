@@ -9,17 +9,14 @@ import com.story.prefs.TempStorage
 import com.story.prefs.UserStorage
 import com.story.utilities.MyApplication.Companion.instance
 import dagger.hilt.android.HiltAndroidApp
-import java.security.KeyManagementException
-import java.security.NoSuchAlgorithmException
 import javax.inject.Inject
-import javax.net.ssl.SSLContext
 
 
 /**
  * [android.app.Application] class Initialize Important SDK's like [FirebaseApp] and Maintain User Session info and User Profile
  */
 @HiltAndroidApp
-class MyApplication : MultiDexApplication(), Configuration.Provider {
+class MyApplication : MultiDexApplication(){
 
     @Inject
     lateinit var workerFactory: HiltWorkerFactory
@@ -31,15 +28,7 @@ class MyApplication : MultiDexApplication(), Configuration.Provider {
     lateinit var tempStorage: TempStorage
 
     /**
-     * Releted to [ScheduleWorker], we are using [WorkManager]
-     */
-    override fun getWorkManagerConfiguration() =
-        Configuration.Builder()
-            .setWorkerFactory(workerFactory)
-            .build()
-
-    /**
-     * [AppCompatDelegate] property enable Vector Resources
+     * AppCompatDelegate property enable Vector Resources
      */
     init {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
@@ -48,16 +37,8 @@ class MyApplication : MultiDexApplication(), Configuration.Provider {
     override fun onCreate() {
         super.onCreate()
         instance = this
-        checkAndLoadCredentials()
     }
 
-    /**
-     * [checkAndLoadCredentials] used by [UserStorage.createUserIdSession] or [UserStorage.migrateSharedPref]
-     * to load information from old implementation and new implementation
-     * @update : Logging user to MixPanel
-     */
-    fun checkAndLoadCredentials() {
-    }
 
     companion object {
 
@@ -68,25 +49,6 @@ class MyApplication : MultiDexApplication(), Configuration.Provider {
         @Volatile
         lateinit var instance: MyApplication
             private set
-
-        /**
-         * Variables manage by [UserStorage] to access information regarding User and App Session
-
-         */
-        var isLoggedIn = false
-
-        /**
-         * [userId] is User name actually which is our User unique id,
-         * [name] is User actually name made by first, last and middle name
-         *
-         * Keeping old version in mind check [UserStorage.migrateSharedPref]
-         * WHERE we are getting all information from DB which was our last implementation
-         *  For new user we are maintaining it from start
-
-         */
-        var userId: String? = null
-
-        var name: String? = null
 
         var accessToken: String? = null
     }

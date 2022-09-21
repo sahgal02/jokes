@@ -7,6 +7,20 @@
         <attr name="border_color" format="color" />
         <attr name="border_overlay" format="boolean" />
     </declare-styleable>
+    <declare-styleable name="CircleView">
+        <attr name="circleRadius" format="dimension" />
+        <attr name="circleColor" format="color" />
+        <attr name="circleDrawOnlystroke" format="boolean" />
+        <attr name="circleStrokeWidth" format="dimension" />
+    </declare-styleable>
 
-
+    <declare-styleable name="DottedLoader">
+        <attr name="dotsRadius" format="dimension" />
+        <attr name="dotsDist" format="dimension" />
+        <attr name="dotsColor" format="color" />
+        <attr name="animDur" format="integer" />
+        <attr name="interpolator" format="reference" />
+        <attr name="noOfDots" format="integer" />
+        <attr name="animDelay" format="integer" />
+    </declare-styleable>
 </resources>

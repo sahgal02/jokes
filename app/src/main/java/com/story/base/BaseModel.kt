@@ -7,5 +7,4 @@ import kotlinx.parcelize.IgnoredOnParcel
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-open class BaseModel : Parcelable {
-}
+open class BaseModel : Parcelable

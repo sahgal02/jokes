@@ -4,7 +4,6 @@ import com.story.R
 import com.story.prefs.UserStorage
 import com.story.utilities.MyApplication
 import com.story.variables.abstracts.OnEventTriggerListener
-import com.story.variables.enums.ResponseType
 import org.json.JSONObject
 import retrofit2.Response
 import javax.inject.Inject
@@ -21,7 +20,7 @@ class ParseJson @Inject constructor(val userStorage: UserStorage) {
 
     private fun parseErrorResponse(listener: OnEventTriggerListener) {
         listener.onErrorMessage(
-            ResponseType.RESPONSE_ERROR,
+            1,
             MyApplication.instance.applicationContext.getString(R.string.string_message_check_connection)
         )
     }

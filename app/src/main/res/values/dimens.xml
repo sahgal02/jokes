@@ -18,4 +18,19 @@
     <dimen name="dimen_20dp">20dp</dimen>
     <dimen name="dimen_56dp">56dp</dimen>
     <dimen name="dimen_slice_radius_large">12dp</dimen>
+    <dimen name="dimen_button_height">44dp</dimen>
+    <dimen name="dimen_button_radius_curved">6dp</dimen>
+    <dimen name="dimen_button_text_size">15sp</dimen>
+    <dimen name="dimen_popup_elevation">2dp</dimen>
+    <dimen name="dimen_border_size">1dp</dimen>
+    <dimen name="dimen_14sp">14sp</dimen>
+    <dimen name="dimen_planet_spinner">44dp</dimen>
+    <dimen name="dimen_spinner_text_size">15sp</dimen>
+    <dimen name="dimen_inbox_image">140dp</dimen>
+    <dimen name="dimen_progress_custom_radius">36dp</dimen>
+    <dimen name="dimen_2dp">2dp</dimen>
+    <dimen name="dimen_edit_text_size">15sp</dimen>
+    <dimen name="dimen_text_size_error">14sp</dimen>
+    <dimen name="dimen_30dp">30dp</dimen>
+    <dimen name="dimen_text_size">13sp</dimen>
 </resources>

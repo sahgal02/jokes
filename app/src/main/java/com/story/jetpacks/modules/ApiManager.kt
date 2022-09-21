@@ -14,6 +14,6 @@ class ApiManager constructor(
     val retrofitOldApis by lazy { retrofit.updateBaseUrl(BuildConfig.API_URL).createApi<RetrofitInterface>() }
 }
 
-
 inline fun <reified T> Retrofit.createApi(): T = this.create(T::class.java)
+
 fun Retrofit.updateBaseUrl(baseUrl: String): Retrofit = this.newBuilder().baseUrl(baseUrl).build()

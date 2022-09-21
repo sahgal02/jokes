@@ -23,7 +23,6 @@ class UserStorage @Inject constructor(
      */
     fun logout() {
         sharedPreferences.edit().clear().apply()
-        MyApplication.isLoggedIn = false
     }
 
 

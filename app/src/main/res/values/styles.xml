@@ -2,7 +2,16 @@
 <resources>
 
     <style name="ExpandedTextAppearance" parent="TextAppearance.Design.CollapsingToolbar.Expanded">
-        <item name="android:textSize">46sp</item>
+        <item name="android:textSize">20sp</item>
+
         <item name="android:textStyle">bold</item>
     </style>
+
+    <style name="RadioTextStyle" parent="android:Widget.Holo.CompoundButton.RadioButton">
+        <item name="android:lineSpacingExtra">-3dp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="colorControlNormal">@color/colorTextHint</item>
+        <item name="colorControlActivated">@color/colorButtonSuccess</item>
+    </style>
+
 </resources>

@@ -1,9 +1,8 @@
 package com.story.jetpacks.modules
 
-import com.story.jetpacks.source.data.face.ItemDataSource
-import com.story.jetpacks.source.data.impls.ItemDataSourceImpl
-import com.story.jetpacks.source.network.face.ItemRemoteSource
-import com.story.jetpacks.source.network.impl.ItemRemoteSourceImpl
+import com.ezetap.network.source.NetworkSource
+import com.story.jetpacks.source.network.face.RemoteSource
+import com.story.jetpacks.source.network.impl.RemoteSourceImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -14,8 +13,5 @@ import dagger.hilt.components.SingletonComponent
 abstract class RepoBinder {
 
     @Binds
-    abstract fun provideItemNetworkRemote(impl: ItemRemoteSourceImpl): ItemRemoteSource
-
-    @Binds
-    abstract fun provideItemDataRemote(impl: ItemDataSourceImpl): ItemDataSource
+    abstract fun provideItemNetworkRemote(impl: RemoteSourceImpl): NetworkSource
 }

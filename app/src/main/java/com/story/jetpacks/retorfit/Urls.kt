@@ -2,9 +2,9 @@ package com.story.jetpacks.retorfit
 
 import com.story.BuildConfig
 import com.story.jetpacks.entities.*
+import com.story.jetpacks.source.network.impl.RemoteSourceImpl
 import com.story.prefs.TempStorage
 import com.story.prefs.UserStorage
-import java.net.URLEncoder
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -19,13 +19,10 @@ class Urls @Inject constructor(
 ) {
 
     /**
-     * Number verification URL using [LoginModel] used by [LoginRemoteSource.apiLogin]
+     * Find planets from URL using [PlanetModel] used by [RemoteSourceImpl.apiFetchPlanets]
      */
-    fun fetchItems(): String {
-        return BuildConfig.API_URL + "api"
+    fun fetchCustom(): String {
+        return BuildConfig.API_URL + "mobileapps/android_assignment.json"
     }
 
-    companion object{
-        const val GET_ITEMS = ""
-    }
 }

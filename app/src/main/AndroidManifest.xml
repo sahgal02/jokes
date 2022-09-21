@@ -38,6 +38,9 @@
 
         <activity
             android:name=".ui.activity.HomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.LauncherActivity"
             android:exported="true"
             android:launchMode="singleTask"
             android:screenOrientation="portrait">
@@ -48,6 +51,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.ExploreVideoActivity" />
+        <activity android:name=".ui.activity.ConnectionActivity" />
     </application>
 </manifest>

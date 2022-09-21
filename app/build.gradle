@@ -24,14 +24,17 @@ android {
 
     buildFeatures {
         dataBinding true
-//        viewBinding true
+        viewBinding true
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '11'
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
+    }
+    kapt {
+        correctErrorTypes = true
     }
     android {
         lintOptions {
@@ -50,11 +53,11 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "API_URL", '\"https://api.com/\"'
+            buildConfigField "String", "API_URL", '\"https://demo.ezetap.com/\"'
         }
         debug {
             manifestPlaceholders = [crashlyticsCollectionEnabled: "true"]
-            buildConfigField "String", "API_URL", '\"https://staging.com/\"'
+            buildConfigField "String", "API_URL", '\"https://demo.ezetap.com/\"'
         }
     }
     splits {
@@ -88,16 +91,16 @@ android {
         applicationVariants.all { variant ->
             switch (variant.getName()) {
                 case "productionRelease":
-                    variant.buildConfigField "String", "API_URL", '\"https://geek-jokes.sameerkumar.website/\"'
+                    variant.buildConfigField "String", "API_URL", '\"https://demo.ezetap.com/\"'
                     break
                 case "productionDebug":
-                    variant.buildConfigField "String", "API_URL", '\"https://geek-jokes.sameerkumar.website/\"'
+                    variant.buildConfigField "String", "API_URL", '\"https://demo.ezetap.com/\"'
                     break
                 case "stagingRelease":
-                    variant.buildConfigField "String", "API_URL", '\"https://geek-jokes.sameerkumar.website/\"'
+                    variant.buildConfigField "String", "API_URL", '\"https://demo.ezetap.com/\"'
                     break
                 case "stagingDebug":
-                    variant.buildConfigField "String", "API_URL", '\"https://geek-jokes.sameerkumar.website/\"'
+                    variant.buildConfigField "String", "API_URL", '\"https://demo.ezetap.com/\"'
                     break
                 default:
                     throw new GradleException("The values are unknown for variant: ${variant.getName()}")
@@ -117,8 +120,8 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
 
     /************ kotlin ************/
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation "androidx.fragment:fragment-ktx:1.4.1"
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation "androidx.fragment:fragment-ktx:1.5.2"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${rootConfiguration.global_kotlin_version}"
 
     /************ Lifecycle ************/
@@ -130,8 +133,10 @@ dependencies {
     /************ Retrofit2 ************/
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'com.google.code.gson:gson:2.8.9'
-    implementation "com.squareup.okhttp3:logging-interceptor:4.10.0"
+    implementation 'com.google.code.gson:gson:2.9.0'
+    implementation "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.3"
+
+    implementation 'com.github.bumptech.glide:glide:4.13.2'
 
     /************ Hilt Dagger ************/
     implementation 'com.google.dagger:hilt-android:2.38.1'
@@ -148,6 +153,11 @@ dependencies {
 
     /************ Facebook shimmer ************/
     implementation "com.facebook.shimmer:shimmer:0.5.0"
+
+    implementation fileTree(dir: "libs", include: ["*.jar", "*.aar"])
+    // implementation files('network.aar')
+    implementation project(':network')
+//    implementation 'com.ezetap.network:1.0'
 }
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.google.firebase.crashlytics'

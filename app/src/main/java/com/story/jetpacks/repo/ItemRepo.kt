@@ -1,44 +1,30 @@
 package com.story.jetpacks.repo
 
-import com.story.jetpacks.entities.ItemModel
-import com.story.jetpacks.source.data.face.ItemDataSource
-import com.story.jetpacks.source.network.face.ItemRemoteSource
+import com.ezetap.network.source.NetworkSource
+import com.ezetap.network.source.ResponseListener
+import com.story.jetpacks.retorfit.Urls
+import com.story.jetpacks.source.network.face.RemoteSource
+import com.story.jetpacks.source.network.impl.RemoteSourceImpl
 import com.story.variables.abstracts.OnEventTriggerListener
-import com.story.variables.enums.ItemOrderType
 import javax.inject.Inject
 
 class ItemRepo @Inject constructor(
-    val dataSource: ItemDataSource,
-    val remoteSource: ItemRemoteSource
+    private val url: Urls,
+    private val remoteSource: NetworkSource
 ) {
-    val items = dataSource.getItems()
-
-    fun select() {
-        dataSource.select()
-    }
 
     /**
-     * Api call to fetch items
+     * Api call to fetch token : [RemoteSourceImpl.fetchCustomUrl]
      */
-    fun fetchItems(listener: OnEventTriggerListener) {
-        remoteSource.apiFetchItems(object : OnEventTriggerListener(){
-            override fun onApiSuccess(any: Any?) {
-                super.onApiSuccess(any)
-                dataSource.insert(any as ItemModel)
-                listener.onApiSuccess(any)
-            }
-
-            override fun onErrorMessage(statusCode: Int, errorMessage: String?) {
-                super.onErrorMessage(statusCode, errorMessage)
-                listener.onErrorMessage(statusCode, errorMessage)
-            }
-        })
+    fun fetchCustomUrl(listener: ResponseListener) {
+        remoteSource.fetchCustomUrl(url.fetchCustom(),listener)
     }
-
-    fun clearItems() {
-        dataSource.clearAll()
+    /**
+     * Api call to fetch token : [RemoteSourceImpl.fetchImage]
+     */
+    fun fetchImage(url:String, listener: ResponseListener) {
+        remoteSource.fetchImage(url, listener)
     }
-
 
     fun closeEverything() {
         remoteSource.cancelApiCalls()

@@ -2,64 +2,59 @@ package com.story.ui.activity
 
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.Menu
-import android.view.MenuItem
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.commit
 import com.story.R
 import com.story.base.BaseActivity
 import com.story.databinding.ActivityMainBinding
-import com.story.ui.frag.ListFrag
+import com.story.jetpacks.entities.DataModel
+import com.story.jetpacks.extensions.loadImage
+import com.story.ui.frag.UiFrag
 import com.story.utilities.Utils
+import com.story.variables.interfaces.IntentKeys
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeActivity : BaseActivity() {
     private lateinit var binding: ActivityMainBinding
-    private val frag = ListFrag()
+    private val model : DataModel by lazy {
+        intent.getParcelableExtra(IntentKeys.INTENT_FOR_MODEL)!!
+    }
+    private val frag = UiFrag()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(LayoutInflater.from(this))
         setContentView(binding.root)
-        setToolbar("Jokes")
+        setToolbar(model.heading)
+        initializeView()
         initializeFragsView()
+    }
+
+    override fun initializeView() {
+        super.initializeView()
+        binding.apply {
+            logo.loadImage(model.logo, R.drawable.placeholder_rectangle)
+            collapsingAppBar.title=model.heading
+        }
     }
 
     override fun setToolbar(title: String?) {
         super.setToolbar(title)
         supportActionBar?.setDisplayHomeAsUpEnabled(false)
-        Utils.doStatusColorBlack(window)
+        Utils.doStatusColorWhite(window)
     }
 
     override fun initializeFragsView() {
         super.initializeFragsView()
+        frag.arguments = Bundle().also {
+            it.putParcelable(IntentKeys.INTENT_FOR_MODEL, model)
+        }
         supportFragmentManager.commit {
-            replace(R.id.jokes, frag)
+            replace(R.id.frag, frag)
             setReorderingAllowed(true)
             addToBackStack(null)
         }
-//        supportFragmentManager.beginTransaction().replace(
-//            R.id.jokes, frag, "jokes"
-//        ).commit()
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu, menu)
-        return super.onCreateOptionsMenu(menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.refresh) {
-            frag.refresh()
-        }
-        return super.onOptionsItemSelected(item)
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-    }
-
-    override fun onBackPressed() {
-        super.onBackPressed()
-    }
 }

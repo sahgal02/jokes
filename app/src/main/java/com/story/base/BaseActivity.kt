@@ -331,7 +331,7 @@ abstract class BaseActivity : AppCompatActivity(), BluePrint.OfView, BluePrint.O
      */
     fun hasConnection(): Boolean {
         if (!hasConnection) {
-            Utils.snackbar(this, getString(R.string.string_message_check_connection))
+           // Utils.snackbar(this, getString(R.string.string_message_check_connection))
         }
         return this.hasConnection
     }

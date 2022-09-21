@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/dimen_16dp">
+
+        <include layout="@layout/include_vertical_divider" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_button_height"
+            android:layout_margin="@dimen/dimen_16dp"
+            android:background="@drawable/button_style_green_rect"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="@{clickListener}"
+            android:text="@string/string_button_name_next"
+            android:textAllCaps="true"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/dimen_button_text_size"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</layout>

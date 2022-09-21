@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#00a1f6</color>
-    <color name="colorPrimaryDark">#0176C4</color>
+    <color name="colorPrimaryDark">#014F83</color>
 
     <color name="colorTextPrimary">#414141</color>
     <color name="colorTextPrimaryLight">#747373</color>
@@ -16,8 +16,9 @@
 
     <color name="colorBackground">#EFEFEF</color>
     <color name="colorBackgroundLight">#e6e6e6</color>
+    <color name="colorErrorMessage">#E55039</color>
 
-    <color name="colorButtonDisable">#E4E4E4</color>
+    <color name="colorButtonDisable">#808080</color>
 
     <color name="colorIconLight">#404040</color>
 
@@ -41,4 +42,8 @@
     <color name="colorAppBarTransparency">#80000000</color>
     <color name="colorShadowView">#1A000000</color>
     <color name="colorShimmer">#DADADA</color>
+    <color name="colorButtonProgress">#5EB9FF</color>
+    <color name="colorButtonSuccess">#60C08F</color>
+    <color name="colorButtonBackgroundDark">#60C08F</color>
+    <color name="colorLayoutBackground">#e6e6e6</color>
 </resources>
